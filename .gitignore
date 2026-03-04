@@ -51,9 +51,7 @@ _NCrunch_*
 [Dd]ebugPublic/
 [Bb]uild/
 
-# ASP.NET
-wwwroot/node_modules/
-wwwroot/lib/
+
 
 # Mac OS
 .DS_Store
