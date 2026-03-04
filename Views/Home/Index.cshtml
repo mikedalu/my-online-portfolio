@@ -1,13 +1,86 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Software Developer | Micheal";
 }
 
-<div class="jumbotron bg-light py-5 mb-4">
-    <div class="container">
-        <h1 class="display-4">Hello, I'm Micheal</h1>
-        <p class="lead">I'm learning C# and ASP.NET Core MVC to build modern, scalable web applications.</p>
-        <hr class="my-4" />
-        <p>This portfolio site is a sandbox where I practice new features, explore frameworks, and share what I'm building.</p>
-        <a class="btn btn-primary btn-lg" href="/CvResume" role="button">View Resume</a>
+<!-- Hero Section -->
+<div class="py-5 mb-5 bg-white border-bottom">
+    <div class="container py-lg-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h6 class="text-primary fw-bold text-uppercase mb-3 ls-widest">Available for Hire</h6>
+                <h1 class="display-3 fw-bold mb-4">Hello, I'm <span class="text-primary">Micheal</span></h1>
+                <p class="fs-4 text-secondary mb-5 lh-base">
+                    I build modern, scalable web applications using <strong>C#</strong> and <strong>ASP.NET Core</strong>. 
+                    Turning complex problems into elegant, functional code is what I do best.
+                </p>
+                <div class="d-flex gap-3">
+                    <a class="btn btn-primary btn-lg px-4 fw-bold shadow-sm" href="/CvResume">
+                        <i class="bi bi-file-earmark-person me-2"></i>View Resume
+                    </a>
+                    <a class="btn btn-outline-dark btn-lg px-4 fw-bold" href="#projects">
+                        Explore Work
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <!-- A simple placeholder for a profile pic or abstract code graphic -->
+                <div class="bg-light rounded-5 p-5 text-center shadow-sm border">
+                     <i class="bi bi-code-slash display-1 text-primary"></i>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<!-- Tax Tool CTA Section (The Feature) -->
+<div class="container mb-5" id="projects">
+    <div class="card border-0 shadow-lg rounded-4 overflow-hidden bg-dark text-white">
+        <div class="row g-0 align-items-center">
+            <div class="col-md-4 p-5 bg-primary text-center">
+                <i class="bi bi-calculator-fill display-2"></i>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body p-4 p-lg-5">
+                    <span class="badge bg-warning text-dark mb-3 fw-bold">NEW FEATURE</span>
+                    <h2 class="fw-bold mb-3">Nigeria Tax Act 2025 Calculator</h2>
+                    <p class="text-light opacity-75 fs-5 mb-4">
+                        Curious about how the new tax laws affect your take-home pay? I've built a real-time 
+                        PAYE calculator implementing the latest graduated rates and rent reliefs.
+                    </p>
+                    <a asp-controller="CalculateTax" asp-action="Index" class="btn btn-light btn-lg fw-bold px-5">
+                        Calculate My Tax Now <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mini Stats/Skills -->
+<div class="container py-5">
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 border bg-white shadow-sm h-100">
+                <h3 class="fw-bold">C# / .NET</h3>
+                <p class="text-muted mb-0">Backend architecture & Logic</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 border bg-white shadow-sm h-100">
+                <h3 class="fw-bold">MVC</h3>
+                <p class="text-muted mb-0">Building robust Web UI</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 rounded-4 border bg-white shadow-sm h-100">
+                <h3 class="fw-bold">SQL</h3>
+                <p class="text-muted mb-0">Data management & Storage</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .ls-widest { letter-spacing: 0.15rem; }
+    .bg-aliceblue { background-color: #f8fbff; }
+</style>
