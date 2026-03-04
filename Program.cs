@@ -14,6 +14,10 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// 1. Enable Static Files (CSS/JS/Images)
+app.UseStaticFiles();
+
 app.UseRouting();
 
 app.UseAuthorization();
