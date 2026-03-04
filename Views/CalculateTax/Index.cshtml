@@ -1,0 +1,99 @@
+@{
+    ViewData["Title"] = "Tax Calculator";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold">Nigeria Tax Calculator</h2>
+        <p class="text-muted">Based on the Nigeria Tax Act 2025 implementation</p>
+    </div>
+
+    <div class="row g-4">
+        <!-- Input Section -->
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm rounded-3">
+                <div class="card-body p-4">
+                    <form asp-controller="CalculateTax" asp-action="CalculateTax" method="post">
+                        <div class="mb-3">
+                            <label class="form-label small fw-bold">Gross Annual Income (₦)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0">₦</span>
+                                <input type="number" name="grossAnnualIncome" class="form-control border-start-0" placeholder="0.00" required>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label small fw-bold">Annual Rent Paid (₦)</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0">₦</span>
+                                <input type="number" name="annualRent" class="form-control border-start-0" placeholder="0.00" required>
+                            </div>
+                            <div class="form-text">Used for the 20% Rent Relief (Capped at 500k)</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Calculate PAYE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="col-lg-8">
+            @if (ViewBag.AnnualTax != null)
+            {
+                <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+                    <div class="card-header bg-dark py-3">
+                        <h5 class="text-white mb-0 small text-uppercase fw-bold">Tax Breakdown</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <!-- Top Summary Stats -->
+                        <div class="row g-0 border-bottom">
+                            <div class="col-md-6 border-end p-4 text-center">
+                                <span class="text-muted small d-block">Monthly Tax (PAYE)</span>
+                                <h2 class="text-success fw-bold mb-0">₦@ViewBag.MonthlyTax.ToString("N2")</h2>
+                            </div>
+                            <div class="col-md-6 p-4 text-center">
+                                <span class="text-muted small d-block">Annual Total Tax</span>
+                                <h2 class="text-primary fw-bold mb-0">₦@ViewBag.AnnualTax.ToString("N2")</h2>
+                            </div>
+                        </div>
+
+                        <!-- Details Table -->
+                        <div class="p-4">
+                            <table class="table table-hover align-middle mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>Gross Annual Income</td>
+                                        <td class="text-end fw-bold">₦@ViewBag.Gross.ToString("N2")</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Statutory Deductions <small class="text-muted">(Pension + NHF)</small></td>
+                                        <td class="text-end text-danger">- ₦@ViewBag.Deductions.ToString("N2")</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rent Relief Applied <small class="text-muted">(20% of rent)</small></td>
+                                        <td class="text-end text-danger">- ₦@ViewBag.RentRelief.ToString("N2")</td>
+                                    </tr>
+                                    <tr class="bg-light">
+                                        <td class="fw-bold">Taxable (Chargeable) Income</td>
+                                        <td class="text-end fw-bold">₦@ViewBag.Chargeable.ToString("N2")</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-0 p-4">
+                        <div class="alert alert-info border-0 small mb-0">
+                            <strong>Note:</strong> The first ₦800,000 of your chargeable income is taxed at 0% per the new 2025 guidelines.
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="h-100 d-flex flex-column align-items-center justify-content-center border rounded-3 bg-light p-5 text-muted">
+                    <i class="bi bi-calculator fs-1 mb-3"></i>
+                    <p>Enter your income details to generate a tax report.</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,62 @@
+# Visual Studio
+.vs/
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+
+# Rider
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NuGet
+*.nupkg
+packages/
+
+# Microsoft Azure Web App publish settings
+*.PublishSettings
+
+# Visual Studio cache files
+*.cache
+
+# IIS Express
+applicationhost.config
+
+# Resharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# dotCover
+*.dotCover
+
+# NCrunch
+_NCrunch_*
+.*crunch*
+
+# Build artifacts
+*.log
+
+# Touch
+*.touch
+
+# Other
+[Dd]ebug/
+[Dd]ebugPublic/
+[Bb]uild/
+
+# ASP.NET
+wwwroot/node_modules/
+wwwroot/lib/
+
+# Mac OS
+.DS_Store
+
+# VS Code
+.vscode/
