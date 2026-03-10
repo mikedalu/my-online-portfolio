@@ -32,11 +32,6 @@ jobs:
       - name: Install EF tools
         run: dotnet tool install --global dotnet-ef
 
-      - name: Debug - show structure
-        run: |
-          ls
-          find . -name "*.csproj"
-
       - name: Run migrations
         run: dotnet ef database update --project my-online-portfolio.csproj
         env:
