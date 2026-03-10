@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: windows-latest
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -29,6 +29,14 @@ jobs:
       - name: dotnet publish
         run: dotnet publish -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
+      - name: Install EF tools
+        run: dotnet tool install --global dotnet-ef
+
+      - name: Run migrations
+        run: dotnet ef database update --project my-online-portfolio
+        env:
+          ConnectionStrings__DefaultConnection: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -39,15 +47,15 @@ jobs:
     runs-on: windows-latest
     needs: build
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
           name: .net-app
-      
+
       - name: Login to Azure
         uses: azure/login@v2
         with:
@@ -62,4 +70,16 @@ jobs:
           app-name: 'portfolio-cv'
           slot-name: 'Production'
           package: .
-          
+
+      - name: Set Azure App Settings
+        uses: azure/appservice-settings@v1
+        with:
+          app-name: 'portfolio-cv'
+          app-settings-json: |
+            [
+              {
+                "name": "ConnectionStrings__DefaultConnection",
+                "value": "${{ secrets.AZURE_SQL_CONNECTION_STRING }}",
+                "slotSetting": false
+              }
+            ]

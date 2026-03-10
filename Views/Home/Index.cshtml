@@ -1,31 +1,103 @@
-﻿@{
-    ViewData["Title"] = "Software Developer | Micheal";
+@{
+    ViewData["Title"] = "Software Developer | Micheal Dalu";
 }
+
+<style>
+    .ls-widest { letter-spacing: 0.15rem; }
+    
+    .hero-code-block {
+        background-color: #161b22;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        border: 1px solid rgba(255,255,255,0.1);
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.9rem;
+    }
+    
+    .code-header {
+        background-color: #0d1117;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .mac-btn {
+        width: 12px; height: 12px; border-radius: 50%; display: inline-block;
+    }
+    
+    .skill-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        border-top: 4px solid transparent;
+        border-left: 1px solid #dee2e6;
+        border-right: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
+    }
+    
+    .skill-csharp { border-top-color: #512bd4; }
+    .skill-mvc { border-top-color: #0d6efd; }
+    .skill-sql { border-top-color: #00bc8c; }
+    
+    .tax-card {
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    
+    .tax-left-pane {
+        background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+        border-top-left-radius: 12px;
+        border-bottom-left-radius: 12px;
+    }
+</style>
 
 <!-- Hero Section -->
 <div class="py-5 mb-5 bg-white border-bottom">
     <div class="container py-lg-5">
         <div class="row align-items-center">
-            <div class="col-lg-7">
-                <h6 class="text-primary fw-bold text-uppercase mb-3 ls-widest">Available for Hire</h6>
-                <h1 class="display-3 fw-bold mb-4">Hello, I'm <span class="text-primary">Micheal</span></h1>
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <h6 class="text-primary fw-bold text-uppercase mb-3 ls-widest d-flex align-items-center gap-2">
+                    <span class="spinner-grow spinner-grow-sm text-success" role="status"></span> Available for Hire
+                </h6>
+                <h1 class="display-3 fw-bold mb-4" style="color: #0d1117;">Hello, I'm <span class="text-primary">Micheal</span></h1>
                 <p class="fs-4 text-secondary mb-5 lh-base">
                     I build modern, scalable web applications using <strong>C#</strong> and <strong>ASP.NET Core</strong>. 
                     Turning complex problems into elegant, functional code is what I do best.
                 </p>
                 <div class="d-flex gap-3">
-                    <a class="btn btn-primary btn-lg px-4 fw-bold shadow-sm" href="/CvResume">
+                    <a class="btn btn-primary btn-lg px-4 fw-bold shadow-sm rounded-pill" href="/CvResume">
                         <i class="bi bi-file-earmark-person me-2"></i>View Resume
                     </a>
-                    <a class="btn btn-outline-dark btn-lg px-4 fw-bold" href="#projects">
-                        Explore Work
+                    <a class="btn btn-outline-dark btn-lg px-4 fw-bold rounded-pill" href="/Gallery">
+                        Explore Gallery
                     </a>
                 </div>
             </div>
-            <div class="col-lg-5 d-none d-lg-block">
-                <!-- A simple placeholder for a profile pic or abstract code graphic -->
-                <div class="bg-light rounded-5 p-5 text-center shadow-sm border">
-                     <i class="bi bi-code-slash display-1 text-primary"></i>
+            <div class="col-lg-5 offset-lg-1 d-none d-lg-block">
+                <div class="hero-code-block text-start text-white overflow-hidden">
+                    <div class="code-header p-3 d-flex gap-2">
+                        <span class="mac-btn bg-danger"></span>
+                        <span class="mac-btn bg-warning"></span>
+                        <span class="mac-btn bg-success"></span>
+                    </div>
+                    <div class="p-4" style="color: #e6edf3;">
+                        <span style="color: #ff7b72;">public class</span> <span style="color: #d2a8ff;">BackendEngineer</span><br/>
+                        {<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72;">public string</span> Name { <span style="color: #ff7b72;">get</span>; } = <span style="color: #a5d6ff;">"Micheal Dalu"</span>;<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72;">public string</span>[] Skills { <span style="color: #ff7b72;">get</span>; } = { <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #a5d6ff;">"C#"</span>, <span style="color: #a5d6ff;">"ASP.NET Core"</span>, <span style="color: #a5d6ff;">"SQL"</span> <br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;};<br/><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #ff7b72;">public void</span> <span style="color: #d2a8ff;">SolveProblem</span>()<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;{<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #8b949e;">// Turning coffee into scalable APIs</span><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Code();<br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                        }
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,20 +106,24 @@
 
 <!-- Tax Tool CTA Section (The Feature) -->
 <div class="container mb-5" id="projects">
-    <div class="card border-0 shadow-lg rounded-4 overflow-hidden bg-dark text-white">
-        <div class="row g-0 align-items-center">
-            <div class="col-md-4 p-5 bg-primary text-center">
-                <i class="bi bi-calculator-fill display-2"></i>
+    <div class="card tax-card border-0 overflow-hidden bg-white">
+        <div class="row g-0 align-items-stretch">
+            <div class="col-md-4 p-5 tax-left-pane text-center text-white d-flex flex-column justify-content-center align-items-center position-relative">
+                <div class="position-absolute top-0 end-0 p-3 opacity-25">
+                    <i class="bi bi-grid-3x3-gap-fill fs-1"></i>
+                </div>
+                <i class="bi bi-calculator text-primary mb-3" style="font-size: 5rem;"></i>
+                <h4 class="fw-bold mb-0">Tax Act 2025</h4>
             </div>
             <div class="col-md-8">
                 <div class="card-body p-4 p-lg-5">
-                    <span class="badge bg-warning text-dark mb-3 fw-bold">NEW FEATURE</span>
-                    <h2 class="fw-bold mb-3">Nigeria Tax Act 2025 Calculator</h2>
-                    <p class="text-light opacity-75 fs-5 mb-4">
+                    <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 mb-3 fw-bold px-3 py-2 rounded-pill">NEW FEATURE</span>
+                    <h2 class="fw-bold mb-3 text-dark">Nigeria Tax Act 2025 Calculator</h2>
+                    <p class="text-secondary fs-5 mb-4">
                         Curious about how the new tax laws affect your take-home pay? I've built a real-time 
                         PAYE calculator implementing the latest graduated rates and rent reliefs.
                     </p>
-                    <a asp-controller="CalculateTax" asp-action="Index" class="btn btn-light btn-lg fw-bold px-5">
+                    <a asp-controller="CalculateTax" asp-action="Index" class="btn btn-primary btn-lg fw-bold px-4 rounded-pill shadow-sm">
                         Calculate My Tax Now <i class="bi bi-arrow-right ms-2"></i>
                     </a>
                 </div>
@@ -57,30 +133,38 @@
 </div>
 
 <!-- Mini Stats/Skills -->
-<div class="container py-5">
+<div class="container py-5 mb-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark">Core <span class="text-primary">Expertise</span></h2>
+        <p class="text-muted">Technologies I work with on a daily basis</p>
+    </div>
     <div class="row g-4 text-center">
         <div class="col-md-4">
-            <div class="p-4 rounded-4 border bg-white shadow-sm h-100">
-                <h3 class="fw-bold">C# / .NET</h3>
-                <p class="text-muted mb-0">Backend architecture & Logic</p>
+            <div class="p-5 bg-white shadow-sm h-100 skill-card skill-csharp">
+                <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                    <i class="bi bi-braces fs-1"></i>
+                </div>
+                <h3 class="fw-bold fs-4">C# / .NET</h3>
+                <p class="text-muted mb-0">Backend architecture, Web APIs & business logic execution.</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="p-4 rounded-4 border bg-white shadow-sm h-100">
-                <h3 class="fw-bold">MVC</h3>
-                <p class="text-muted mb-0">Building robust Web UI</p>
+            <div class="p-5 bg-white shadow-sm h-100 skill-card skill-mvc">
+                <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                    <i class="bi bi-browser-chrome fs-1"></i>
+                </div>
+                <h3 class="fw-bold fs-4">ASP.NET MVC</h3>
+                <p class="text-muted mb-0">Building robust, server-rendered web UI with Razor views.</p>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="p-4 rounded-4 border bg-white shadow-sm h-100">
-                <h3 class="fw-bold">SQL</h3>
-                <p class="text-muted mb-0">Data management & Storage</p>
+            <div class="p-5 bg-white shadow-sm h-100 skill-card skill-sql">
+                <div class="mb-4 text-primary bg-primary bg-opacity-10 d-inline-block p-3 rounded-circle">
+                    <i class="bi bi-database fs-1"></i>
+                </div>
+                <h3 class="fw-bold fs-4">SQL Server</h3>
+                <p class="text-muted mb-0">Relational data modeling, querying, and stored procedures.</p>
             </div>
         </div>
     </div>
 </div>
-
-<style>
-    .ls-widest { letter-spacing: 0.15rem; }
-    .bg-aliceblue { background-color: #f8fbff; }
-</style>

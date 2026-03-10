@@ -2,46 +2,108 @@
     ViewData["Title"] = "About Me";
 }
 
-<div class="container py-5">
-    <div class="row align-items-start">
+<style>
+    .about-hero {
+        background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+        color: white;
+        padding: 5rem 0;
+        margin-bottom: 4rem;
+    }
+    .initials-avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #0d6efd, #00bc8c);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        font-weight: 700;
+        margin: 0 auto 1.5rem auto;
+        box-shadow: 0 8px 20px rgba(13, 110, 253, 0.3);
+        border: 4px solid white;
+    }
+    .skill-badge-pill {
+        padding: 0.6rem 1.2rem;
+        border-radius: 50rem;
+        background-color: #f8f9fa;
+        color: #0d1117;
+        font-weight: 600;
+        border: 1px solid #dee2e6;
+        transition: all 0.2s ease-in-out;
+    }
+    .skill-badge-pill:hover {
+        background-color: #0d6efd;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2);
+    }
+    .profile-card {
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border: none;
+        background-color: white;
+    }
+</style>
+
+<!-- Hero Banner -->
+<div class="about-hero text-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold mb-3">About <span class="text-primary">Me</span></h1>
+        <p class="fs-4 fw-light text-white-50 max-w-75 mx-auto">
+            Get to know the developer behind the code.
+        </p>
+    </div>
+</div>
+
+<div class="container pb-5 mb-5">
+    <div class="row align-items-start g-5">
         
         <!-- Main Content -->
         <div class="col-lg-8 pe-lg-5">
-            <h1 class="display-5 fw-bold mb-4">About Me</h1>
-            <p class="lead text-muted">
-                Hello! My name is <strong>Micheal</strong>. I am a passionate software developer...
+            <h2 class="fw-bold mb-4" style="color: #0d1117;">My Story</h2>
+            <p class="lead text-secondary mb-4 lh-base fs-5">
+                Hello! My name is <strong>Micheal</strong>. I am a passionate software developer who loves turning complex problems into simple, beautiful, and intuitive systems.
+            </p>
+            <p class="text-secondary mb-5 lh-lg">
+                I specialize in backend development with a strong focus on the .NET ecosystem. My journey in software engineering started with a curiosity for how things work under the hood, and it has evolved into a career path centered around building scalable, robust web applications and APIs. I enjoy working on performance optimization, database design, and clean architecture.
             </p>
             
+            <h3 class="fw-bold mb-4" style="color: #0d1117;">Tech Stack & Tools</h3>
+            
             <!-- Tech Stack Grid -->
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">C# & ASP.NET Core MVC</li>
-                        <li class="list-group-item">TypeScript</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">PostgreSQL & SQL Server</li>
-                        <li class="list-group-item">Azure & Google Cloud</li>
-                    </ul>
-                </div>
+            <div class="d-flex flex-wrap gap-3 mb-4">
+                <span class="skill-badge-pill"><i class="bi bi-code-slash text-primary me-2"></i>C# & ASP.NET Core MVC</span>
+                <span class="skill-badge-pill"><i class="bi bi-filetype-ts text-primary me-2"></i>TypeScript</span>
+                <span class="skill-badge-pill"><i class="bi bi-database-fill text-primary me-2"></i>PostgreSQL & SQL Server</span>
+                <span class="skill-badge-pill"><i class="bi bi-cloud-fill text-primary me-2"></i>Azure</span>
+                <span class="skill-badge-pill"><i class="bi bi-cloud-fill text-primary me-2"></i>Google Cloud</span>
+                <span class="skill-badge-pill"><i class="bi bi-git text-primary me-2"></i>Git & GitHub</span>
+                <span class="skill-badge-pill"><i class="bi bi-bootstrap-fill text-primary me-2"></i>Bootstrap 5</span>
             </div>
         </div>
 
         <!-- Sidebar Profile -->
         <div class="col-lg-4">
-            <div class="card border-0 shadow-sm text-center p-4 bg-light">
-                <div class="mx-auto mb-3" style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden;">
-                     <img src="https://imgs.search.brave.com/NaybIh5XxPUAmgogL23B2ChDiZSIil4GAK_PA67w4vg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdDUu/ZGVwb3NpdHBob3Rv/cy5jb20vMTU2MDE1/OTIvNjY2NTIvaS80/NTAvZGVwb3NpdHBo/b3Rvc182NjY1Mjc0/OTItc3RvY2stcGhv/dG8tc2lkZS12aWV3/LWFzaWFuLWRldmVs/b3Blci10eXBpbmcu/anBn" 
-                         alt="Profile" class="img-fluid" style="object-fit: cover; height: 100%; width: 100%;" />
+            <div class="card profile-card text-center p-4">
+                <div class="initials-avatar">
+                    MD
                 </div>
-                <h4>Micheal Dalu</h4>
-                <p class="text-muted">Backend Engineer</p>
+                <h3 class="fw-bold mb-1">Micheal Dalu</h3>
+                <p class="text-muted mb-4 fs-5">Backend Engineer</p>
                 
-                <div class="d-grid mt-3">
+                <div class="d-flex justify-content-center gap-3 mb-4">
+                    <a href="#" class="btn btn-light rounded-circle p-2 px-3"><i class="bi bi-github fs-5"></i></a>
+                    <a href="#" class="btn btn-light rounded-circle p-2 px-3"><i class="bi bi-linkedin fs-5"></i></a>
+                    <a href="#" class="btn btn-light rounded-circle p-2 px-3"><i class="bi bi-twitter-x fs-5"></i></a>
+                </div>
+
+                <div class="d-grid mt-2">
                     <!-- Link to the Contact Action -->
-                    <a asp-controller="Index" asp-action="Contact" class="btn btn-primary">Hire Me</a>
+                    <a href="mailto:simdimike123@gmail.com" class="btn btn-primary btn-lg rounded-pill fw-bold shadow-sm">
+                        <i class="bi bi-envelope-fill me-2"></i>Hire Me
+                    </a>
                 </div>
             </div>
         </div>

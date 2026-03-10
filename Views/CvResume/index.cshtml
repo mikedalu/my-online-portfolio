@@ -2,37 +2,170 @@
     ViewData["Title"] = "Resume";
 }
 
-<div class="container mt-5">
-    <h1 class="mb-3">Micheal Dalu</h1>
-    <p><strong>Email:</strong> <a href="mailto:simdimike123@gmail.com">simdimike123@gmail.com</a></p>
-    <p><strong>Phone:</strong> (555) 123-4567</p>
+<style>
+    .resume-header {
+        background-color: #0d1117;
+        color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    
+    .section-heading {
+        position: relative;
+        padding-left: 1rem;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        color: #0d1117;
+    }
+    
+    .section-heading::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 4px;
+        background-color: #0d6efd;
+        border-radius: 2px;
+    }
+    
+    .timeline-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        transition: transform 0.2s;
+        background-color: white;
+    }
+    
+    .timeline-card:hover {
+        transform: translateX(5px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    
+    .skill-badge {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+        border-radius: 50rem;
+        background-color: #f8f9fa;
+        color: #0d1117;
+        border: 1px solid #dee2e6;
+        transition: all 0.2s;
+    }
+    
+    .skill-badge:hover {
+        background-color: #0d6efd;
+        color: white;
+        border-color: #0d6efd;
+    }
+</style>
 
-    <hr />
+<div class="container py-5">
+    <!-- Header Banner -->
+    <div class="resume-header p-5 mb-5 text-center text-md-start">
+        <div class="row align-items-center">
+            <div class="col-md-8">
+                <h1 class="display-4 fw-bold mb-2">Micheal Dalu</h1>
+                <p class="fs-4 text-primary mb-3">Backend Engineer</p>
+                <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start text-light opacity-75">
+                    <span><i class="bi bi-envelope-fill me-2"></i><a href="mailto:simdimike123@gmail.com" class="text-light text-decoration-none">simdimike123@gmail.com</a></span>
+                    <span><i class="bi bi-telephone-fill me-2"></i>(555) 123-4567</span>
+                    <span><i class="bi bi-geo-alt-fill me-2"></i>Nigeria</span>
+                </div>
+            </div>
+            <div class="col-md-4 text-md-end mt-4 mt-md-0">
+                <a href="#" class="btn btn-outline-light rounded-pill px-4 py-2">
+                    <i class="bi bi-download me-2"></i>Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
 
-    <h3>Summary</h3>
-    <p>Experienced developer with a background in building web applications using ASP.NET Core, Bootstrap, and modern front-end technologies. Passionate about clean code, performance, and user experience.</p>
+    <div class="row g-5">
+        <div class="col-lg-8">
+            <!-- Summary -->
+            <section class="mb-5">
+                <h3 class="section-heading">Professional Summary</h3>
+                <p class="lead text-secondary fs-6 lh-lg">
+                    Experienced developer with a background in building web applications using ASP.NET Core, Bootstrap, and modern front-end technologies. Passionate about clean code, performance, and user experience. Adept at turning complex business requirements into scalable, robust technical solutions.
+                </p>
+            </section>
 
-    <h3>Experience</h3>
-    <ul>
-        <li><strong>Intern</strong> – Bincom Academy (2022–Present)
-            <ul>
-                <li>Learned several full-stack projects using ASP.NET Core and React.</li>
-                <li>Learned how to create deploy webapps to Microsoft Azure</li>
-            </ul>
-        </li>
-        <li><strong>Developer</strong> – Zinox tech (2019–2022)
-            <ul>
-                <li>Worked on internal tools and public-facing websites.</li>
-                <li>Optimized database queries resulting in 30% faster load times.</li>
-            </ul>
-        </li>
-    </ul>
+            <!-- Experience -->
+            <section class="mb-5">
+                <h3 class="section-heading">Experience</h3>
+                
+                <div class="card timeline-card mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold mb-0">Intern Developer</h5>
+                            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">2022 – Present</span>
+                        </div>
+                        <p class="text-primary fw-semibold mb-3">Bincom Academy</p>
+                        <ul class="text-secondary mb-0">
+                            <li class="mb-2">Developing full-stack projects using ASP.NET Core, MVC architecture, and React for rich UIs.</li>
+                            <li>Creating and deploying web applications to Microsoft Azure, managing app services and SQL databases.</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <h3>Education</h3>
-    <ul>
-        <li>B.S. in Computer Science – University of Jos (2015–2019)</li>
-    </ul>
+                <div class="card timeline-card mb-4">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="fw-bold mb-0">Web Developer</h5>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 rounded-pill">2019 – 2022</span>
+                        </div>
+                        <p class="text-primary fw-semibold mb-3">Zinox Tech</p>
+                        <ul class="text-secondary mb-0">
+                            <li class="mb-2">Worked on internal utility tools and public-facing corporate websites.</li>
+                            <li>Optimized database queries, implemented caching which resulted in 30% faster page load times.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-    <h3>Skills</h3>
-    <p>ASP.NET Core, C#, Tyescript,Tailwindcss, Bootstrap, SQL, Git, Azure</p>
+            <!-- Education -->
+            <section class="mb-5">
+                <h3 class="section-heading">Education</h3>
+                <div class="card timeline-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <h5 class="fw-bold mb-0">B.S. in Computer Science</h5>
+                            <span class="text-muted small">2015 – 2019</span>
+                        </div>
+                        <p class="text-primary mb-0">University of Jos</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-lg-4">
+            <!-- Skills -->
+            <section class="mb-5 p-4 bg-white rounded-4 shadow-sm border">
+                <h3 class="section-heading mb-4">Core Skills</h3>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="skill-badge">C#</span>
+                    <span class="skill-badge">ASP.NET Core</span>
+                    <span class="skill-badge">MVC</span>
+                    <span class="skill-badge">TypeScript</span>
+                    <span class="skill-badge">TailwindCSS</span>
+                    <span class="skill-badge">Bootstrap 5</span>
+                    <span class="skill-badge">SQL Server</span>
+                    <span class="skill-badge">Git</span>
+                    <span class="skill-badge">Azure</span>
+                    <span class="skill-badge">REST APIs</span>
+                </div>
+            </section>
+            
+            <!-- Additional Info Box -->
+            <section class="p-4 bg-light rounded-4 border border-secondary border-opacity-25">
+                <h5 class="fw-bold mb-3"><i class="bi bi-lightbulb text-warning me-2"></i>Highlights</h5>
+                <ul class="list-unstyled text-secondary mb-0">
+                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Strong problem-solving skills</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Agile methodology</li>
+                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Team collaboration</li>
+                    <li><i class="bi bi-check2-circle text-success me-2"></i>Continuous Integration</li>
+                </ul>
+            </section>
+        </div>
+    </div>
 </div>
